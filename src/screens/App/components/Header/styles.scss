@@ -1,0 +1,6 @@
+@import '~partials/_settings';
+
+.header {
+  @include theme-background;
+  padding-top: 10px;
+}

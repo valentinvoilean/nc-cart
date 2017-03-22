@@ -1,0 +1,27 @@
+@import '~partials/_settings';
+
+.wrapper {
+  margin-top: $vertical-rythm-spacing-component;
+}
+
+.productsContainer {
+  clear: both;
+  float: left;
+  width: 100%;
+  min-height: 100px;
+  overflow: hidden;
+   & > span {
+     clear: both;
+     float: left;
+     width: 100%;
+     overflow: hidden;
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+   }
+}
+
+.spinner {
+  position: absolute;
+  left: 50%;
+}

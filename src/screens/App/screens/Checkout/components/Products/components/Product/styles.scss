@@ -1,0 +1,51 @@
+@import '~partials/_settings';
+
+.product {
+  border: 1px solid $c-secondary-darker;
+  padding: 0 10px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  @include susy-breakpoint($breakpoint-large-px) {
+    @include span(3);
+    margin-top: 0;
+
+    &:nth-child(4n+4) {
+      margin-right: 0;
+    }
+  }
+}
+
+.title {
+  font-size: $font-size-headline-product;
+  line-height: $line-height-factor-base;
+  margin: $vertical-rythm-spacing-text 0;
+}
+
+.group {
+  display: block;
+  width: 100%;
+  float: left;
+  overflow: hidden;
+}
+
+.button {
+  @include remove-button-appearance;
+  color: $c-primary;
+  float: left;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+    text-decoration: underline;
+  }
+}
+
+.price {
+  float: right;
+  font-weight: $font-weight-bold;
+}

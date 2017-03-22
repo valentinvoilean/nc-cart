@@ -1,0 +1,77 @@
+
+// -- Styles
+
+// Universal Box Sizing with Inheritance
+// https://css-tricks.com/box-sizing/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  min-height: 100%;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+html {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  line-height: $line-height-factor-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+}
+
+// Special Classes
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.is-hidden {
+  display: none;
+}
+
+.container {
+  @include container();
+  padding-left: $horizontal-rythm-spacing-text;
+  padding-right: $horizontal-rythm-spacing-text;
+  max-width: $page-max-width;
+  min-width: 380px;
+  box-sizing: border-box;
+}
+
+.strong {
+  font-weight: $font-weight-bold;
+}
+
+.toaster {
+  line-height: 1;
+}
+
+h2 {
+  font-family: Open Sans, Helvetica, Arial, sans-serif;
+  color: $c-primary;
+  font-size: $font-size-headline-component;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-factor-base;
+  margin: $vertical-rythm-spacing-text 0 0;
+
+  @include susy-breakpoint($breakpoint-large-px) {
+    font-size: $font-size-headline-component-large;
+  }
+}
+
+a {
+  font-size: $font-size-base;
+  color: $c-primary;
+  line-height: $line-height-factor-base;
+  cursor: pointer;
+}

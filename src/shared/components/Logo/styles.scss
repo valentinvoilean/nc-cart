@@ -1,0 +1,16 @@
+@import '~partials/_settings';
+
+.logo {
+  display: block;
+  float: left;
+}
+
+.logoIcon {
+  width: 125px;
+  height: 25px;
+
+  @include susy-breakpoint($breakpoint-large-px) {
+    width: 180px;
+    height: 35px;
+  }
+}

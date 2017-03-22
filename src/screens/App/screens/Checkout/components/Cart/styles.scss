@@ -1,0 +1,79 @@
+@import '~partials/_settings';
+
+.wrapper {
+  margin-top: $vertical-rythm-spacing-component;
+}
+
+.table {
+  width: 100%;
+
+  thead {
+    th {
+      width: 30%;
+      color: $c-primary;
+      font-size: $font-size-table-header;
+      line-height: $line-height-factor-base;
+      font-weight: $font-weight-regular;
+      text-align: right;
+      border-bottom: 1px dashed $c-secondary-darker;
+
+      &:first-child {
+        width: 40%;
+        text-align: left;
+      }
+
+      @include susy-breakpoint($breakpoint-large-px) {
+        width: 20%;
+
+        &:first-child {
+          width: 60%;
+        }
+      }
+    }
+  }
+
+  tfoot {
+    td {
+      text-align: right;
+      line-height: $line-height-factor-base;
+      font-size: $font-size-base;
+      padding: 10px;
+      font-weight: $font-weight-bold;
+
+      &:first-child {
+        font-weight: $font-weight-regular;
+        font-style: italic;
+      }
+    }
+
+    tr {
+
+      &:nth-child(2) td {
+        border-bottom: 1px solid $c-secondary-darker;
+      }
+
+      &:last-child td {
+        border-bottom: 1px dashed $c-secondary-darker;
+
+        &:last-child {
+          color: $c-primary;
+          font-size: $font-size-headline-component;
+        }
+      }
+    }
+
+  }
+}
+
+.actionButtons {
+  text-align: right;
+  margin-top: $vertical-rythm-spacing-component;
+
+  span {
+    margin: 0 10px;
+  }
+}
+
+.cartButton {
+  @include cart-button;
+}

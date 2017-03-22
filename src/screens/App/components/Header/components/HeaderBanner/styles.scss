@@ -1,0 +1,71 @@
+@import '~partials/_settings';
+
+.banner {
+  clear: both;
+  width: calc(100% + 20px);
+  height: 300px;
+  margin-top: 20px;
+  margin-left: -10px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 2px 0 rgba(148,148,148,1);
+
+  @include susy-breakpoint($breakpoint-large-px) {
+    width: 100%;
+    height: 200px;
+    margin-left: 0;
+    margin-top: 15px;
+    bottom: -5px;
+  }
+
+  & > :global(.react-parallax) {
+    height: inherit;
+
+    & > :global(.react-parallax-background-children) {
+      width: 100%;
+    }
+  }
+}
+
+.image, .image img {
+  width: 100%;
+  min-width: 260px;
+  height: auto;
+
+  @include susy-breakpoint($breakpoint-large-px) {
+    min-width: 780px;
+  }
+}
+
+.title {
+  font-family: Open Sans, Helvetica, Arial, sans-serif;
+  font-size: $font-size-headline-primary;
+  color: $c-secondary;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  line-height: $line-height-factor-base;
+  text-align: right;
+  margin: 0 $horizontal-rythm-spacing-text 0 0;
+
+  @include susy-breakpoint($breakpoint-large-px) {
+    font-size: $font-size-headline-primary-large;
+  }
+
+  & > span {
+    display: block;
+  }
+
+  @include susy-breakpoint($breakpoint-large-px) {
+    text-align: left;
+    left: 0;
+    right: auto;
+    font-weight: $font-weight-regular;
+    margin: 0 0 0 $horizontal-rythm-spacing-text;
+
+    & > span {
+      display: inline;
+    }
+  }
+}

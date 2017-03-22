@@ -1,0 +1,50 @@
+@import '~partials/_settings';
+
+.title {
+  font-size: $font-size-headline-product;
+  line-height: $line-height-factor-base;
+  margin: 0;
+}
+
+.button {
+  @include remove-button-appearance;
+  color: $c-primary;
+  float: left;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+    text-decoration: underline;
+  }
+}
+
+.product {
+  td {
+    vertical-align: top;
+    text-align: right;
+    padding: 10px 0;
+    border-bottom: 1px solid $c-secondary-darker;
+
+    &:first-child {
+      text-align: left;
+    }
+  }
+
+  input {
+    @include remove-input-appearance;
+    text-align: right;
+    width: 60px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    @include cart-button;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+  }
+}

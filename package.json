@@ -1,0 +1,195 @@
+{
+  "name": "hero-shopping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start-prod",
+    "start-server": "node ./src/config/server.js",
+    "start-dev": "better-npm-run start-dev",
+    "start-prod": "npm-run-all build start-server",
+    "build": "better-npm-run build",
+    "lint": "eslint ./src",
+    "test": "jest"
+  },
+  "betterScripts": {
+    "start-dev": {
+      "command": "webpack-dev-server --config ./tools/webpack/webpack.dev.js",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "build": {
+      "command": "webpack --config ./tools/webpack/webpack.prod.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/node_modules/jest-enzyme/lib/index.js",
+    "roots": [
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleNameMapper": {
+      "^svg(.*)$": "<rootDir>/src/static/svg$1",
+      "^img(.*)$": "<rootDir>/src/static/img$1",
+      "^partials(.*)$": "<rootDir>/src/static/themes/partials$1",
+      "\\.(css|scss|less)$": "<rootDir>/src/__mocks__/styleMock.js",
+      "\\.(ttf|eot|woff|pdf|png|gif|ico|svg|jpg)$": "<rootDir>/src/__mocks__/fileMock.js"
+    },
+    "collectCoverage": true,
+    "coverageReporters": [
+      "text",
+      "html"
+    ]
+  },
+  "eslintConfig": {
+    "rules": {
+      "one-var": 0,
+      "one-var-declaration-per-line": 0,
+      "object-property-newline": 0,
+      "operator-linebreak": 0,
+      "no-shadow": 0,
+      "complexity": 0,
+      "max-len": [
+        1,
+        120
+      ],
+      "react/prefer-stateless-function": 0
+    },
+    "extends": [
+      "@nc/react"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "modules": false,
+          "useBuiltIns": false,
+          "debug": false,
+          "targets": {
+            "browsers": [
+              ">1%",
+              "last 4 versions",
+              "Firefox ESR",
+              "not ie < 9"
+            ]
+          }
+        }
+      ],
+      "stage-0",
+      "react",
+      "react-optimize"
+    ],
+    "plugins": [
+      "transform-decorators-legacy"
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs"
+        ]
+      },
+      "development": {
+        "plugins": [
+          "transform-react-jsx-self",
+          "transform-react-jsx-source"
+        ]
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/vvm88/hero-shopping"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@blueprintjs/core": "^1.11.1",
+    "@nc/eslint-config-react": "^1.0.0",
+    "axios": "^0.15.3",
+    "babel-plugin-transform-function-bind": "^6.22.0",
+    "classnames": "^2.2.5",
+    "express": "^4.15.2",
+    "immutable": "^3.8.1",
+    "normalize.css": "^5.0.0",
+    "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-autosuggest": "^9.0.0",
+    "react-dom": "^15.4.2",
+    "react-match-media": "^2.0.1",
+    "react-parallax": "^1.2.6",
+    "react-redux": "^5.0.3",
+    "react-router": "^3.0.2",
+    "react-router-breadcrumbs": "^2.0.0",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0",
+    "redux-form": "^6.5.0",
+    "redux-thunk": "^2.2.0",
+    "susy": "^2.2.12",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "autoprefixer-loader": "^3.2.0",
+    "axios-mock-adapter": "^1.7.1",
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
+    "babel-plugin-transform-react-jsx-self": "^6.22.0",
+    "babel-plugin-transform-react-jsx-source": "^6.22.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.1.10",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-0": "^6.22.0",
+    "better-npm-run": "0.0.14",
+    "css-loader": "^0.26.2",
+    "enzyme": "^2.7.1",
+    "eslint": "^3.17.0",
+    "eslint-loader": "^1.6.3",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.10.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.26.0",
+    "jest": "^19.0.2",
+    "jest-cli": "^19.0.2",
+    "jest-enzyme": "^2.1.0",
+    "json-loader": "^0.5.4",
+    "node-sass": "^4.3.0",
+    "npm-run-all": "^4.0.2",
+    "postcss-loader": "^1.3.3",
+    "progress-bar-webpack-plugin": "^1.9.3",
+    "react-addons-test-utils": "^15.4.2",
+    "react-test-renderer": "^15.4.2",
+    "redux-immutable-state-invariant": "^1.2.4",
+    "resolve-url": "^0.2.1",
+    "resolve-url-loader": "^2.0.2",
+    "run-sequence": "^1.2.2",
+    "sass-loader": "^6.0.2",
+    "sass-module-importer": "^1.4.0",
+    "serial-concat-files": "^1.0.0",
+    "style-loader": "^0.13.2",
+    "svg-sprite-loader": "^0.3.0",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-merge": "^4.0.0"
+  }
+}

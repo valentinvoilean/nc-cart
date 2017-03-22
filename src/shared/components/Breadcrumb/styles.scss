@@ -1,0 +1,12 @@
+@import '~partials/_settings';
+
+.breadcrumb {
+  a {
+    color: $c-primary;
+
+    &:last-child:not(:only-child) {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+}

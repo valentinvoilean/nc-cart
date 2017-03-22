@@ -1,0 +1,106 @@
+// VARIABLES
+//
+// Please note: the 'large' in variable names refers to
+//  large viewports
+
+// -- Colors
+$c-primary: #311b92;
+$c-primary-lighter: lighten($c-primary, 30%);
+$c-secondary: #fff;
+$c-secondary-darker: darken($c-secondary, 20%);
+
+// -- Base values
+$font-size-base: 16px;
+$font-weight-regular: 300;
+$font-weight-bold: 400;
+$font-weight-bolder: 600;
+$line-height-factor-base: 1.5;
+
+// - Font sizes
+$font-size-headline-primary: 30px;
+$font-size-headline-primary-large: 42px;
+$font-size-headline-component: 30px;
+$font-size-headline-component-large: 35px;
+$font-size-table-header: 25px;
+$font-size-headline-product: $font-size-base;
+
+// -- horizontal rhytm
+$horizontal-rythm-spacing-text: 10px;
+
+// -- vertical rhytm
+$vertical-rythm-spacing-component: 30px;
+$vertical-rythm-spacing-text: 10px;
+
+// -- page
+$breakpoint-large-px: 700px;
+$page-max-width: 1180px;
+
+// MIXINS
+@mixin theme-background {
+  background: linear-gradient(-22deg, $c-primary-lighter 30%, $c-primary 100%);
+}
+
+@mixin remove-button-appearance {
+  box-shadow: none;
+  background-color: transparent;
+  transition: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin remove-input-appearance {
+  appearance: textfield;
+  background-color: transparent;
+  border: none;
+  font: inherit;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+}
+
+@mixin text-button {
+  @include remove-button-appearance;
+
+  color: $c-primary;
+  font-size: $font-size-base;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin cart-button {
+  @include remove-button-appearance;
+
+  background: $c-primary;
+  border-radius: 6px;
+  padding: $vertical-rythm-spacing-text;
+  font-size: $font-size-base;
+  color: $c-secondary;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    background: $c-primary-lighter;
+  }
+}
+
+// GRID
+@import "~susy/sass/susy";
+
+$susy: (
+  math: fluid,
+  container: 100%,
+  container-position: center,
+  columns: 12,
+  gutter-position: after,
+  gutters: 1/4
+);

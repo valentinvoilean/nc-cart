@@ -1,0 +1,19 @@
+@import '~partials/_settings';
+
+.footer {
+  @include theme-background;
+  margin-top: $vertical-rythm-spacing-component;
+}
+
+.copyright {
+  color: $c-secondary;
+  margin-left: 20px;
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
+
+  @include susy-breakpoint($breakpoint-large-px) {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
