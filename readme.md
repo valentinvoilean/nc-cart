@@ -47,7 +47,7 @@ Features
     * Webpack dev server 2 - file watching and compiling in memory
         * hot module replacement plugin
         * enabled historyApiFallback —>  not necessary anymore /#/route; now can be used /route
-3. Eslint - Rules: [@nc/eslint-config-react](https://source.int.netcentric.biz/git/projects/NPM-NC/repos/eslint-config-react/browse)
+3. Eslint
 4. Folder structure - separated components by features
 5. Redux
 6. Immutable
